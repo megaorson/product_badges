@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+<!--		<add id="Megaorson::top_level" title="Megaorson" module="Megaorson_ProductBadges" sortOrder="9999" resource="Magento_Backend::content"/>-->
+<!--		<add id="Megaorson_ProductBadges::megaorson_productbadges_productbadges" title="ProductBadges" module="Megaorson_ProductBadges" sortOrder="9999" resource="Magento_Backend::content" parent="Megaorson::top_level" action="megaorson_productbadges/productbadges/index"/>-->
+	</menu>
+</config>

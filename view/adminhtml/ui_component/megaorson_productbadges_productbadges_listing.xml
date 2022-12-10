@@ -1,0 +1,132 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">megaorson_productbadges_productbadges_listing.megaorson_productbadges_productbadges_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>megaorson_productbadges_productbadges_columns</spinner>
+		<deps>
+			<dep>megaorson_productbadges_productbadges_listing.megaorson_productbadges_productbadges_listing_data_source</dep>
+		</deps>
+		<buttons>
+			<button name="add">
+				<url path="*/*/new"/>
+				<class>primary</class>
+				<label translate="true">Add new ProductBadges</label>
+			</button>
+		</buttons>
+	</settings>
+	<dataSource name="megaorson_productbadges_productbadges_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">productbadges_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>Megaorson_ProductBadges::ProductBadges</aclResource>
+		<dataProvider name="megaorson_productbadges_productbadges_listing_data_source" class="Megaorson\ProductBadges\view\Element\UiComponent\DataProvider\BadgeDataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>productbadges_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="megaorson_productbadges_productbadges_columns">
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>productbadges_id</indexField>
+                <sortable>false</sortable>
+			</settings>
+		</selectionsColumn>
+		<column name="productbadges_id">
+			<settings>
+				<filter>text</filter>
+                <sortable>false</sortable>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="label">
+			<settings>
+                <sortable>false</sortable>
+				<filter>text</filter>
+				<label translate="true">label</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<actionsColumn name="actions" class="Megaorson\ProductBadges\Ui\Component\Listing\Column\ProductBadgesActions">
+			<settings>
+                <sortable>false</sortable>
+				<indexField>productbadges_id</indexField>
+				<resizeEnabled>false</resizeEnabled>
+				<resizeDefaultWidth>107</resizeDefaultWidth>
+			</settings>
+		</actionsColumn>
+		<column name="image">
+			<settings>
+                <sortable>false</sortable>
+				<filter>text</filter>
+				<label translate="true">image</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="is_visible_pdp">
+			<settings>
+                <sortable>false</sortable>
+				<filter>text</filter>
+				<label translate="true">is_visible_pdp</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="is_visible_plp">
+			<settings>
+                <sortable>false</sortable>
+				<filter>text</filter>
+				<label translate="true">is_visible_plp</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+		<column name="product_id">
+			<settings>
+                <sortable>false</sortable>
+				<filter>text</filter>
+				<label translate="true">product_id</label>
+				<editor>
+					<editorType>text</editorType>
+					<validation>
+						<rule name="required-entry" xsi:type="boolean">false</rule>
+					</validation>
+				</editor>
+			</settings>
+		</column>
+	</columns>
+</listing>

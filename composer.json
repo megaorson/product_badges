@@ -1,0 +1,22 @@
+{
+    "name": "megaorson/module-productbadges",
+    "description": "ProductBadges",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Victor",
+            "email": "dubinajjot@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Megaorson\\ProductBadges\\": ""
+        }
+    }
+}

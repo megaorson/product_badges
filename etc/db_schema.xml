@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="megaorson_productbadges_productbadges" resource="default" engine="innodb" comment="megaorson_productbadges_productbadges Table">
+		<column xsi:type="int" name="productbadges_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="productbadges_id"/>
+		</constraint>
+		<column name="label" nullable="true" xsi:type="varchar" comment="label" length="255"/>
+		<column name="image" nullable="true" xsi:type="varchar" comment="image" length="255"/>
+		<column name="is_visible_pdp" nullable="true" xsi:type="boolean" comment="is_visible_pdp"/>
+		<column name="is_visible_plp" nullable="true" xsi:type="boolean" comment="is_visible_plp"/>
+		<column name="product_id" nullable="true" xsi:type="int" comment="product_id"/>
+	</table>
+</schema>

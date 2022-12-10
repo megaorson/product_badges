@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Megaorson\ProductBadges\Api\ProductBadgesRepositoryInterface" type="Megaorson\ProductBadges\Model\ProductBadgesRepository"/>
+	<preference for="Megaorson\ProductBadges\Api\Data\ProductBadgesInterface" type="Megaorson\ProductBadges\Model\ProductBadges"/>
+	<preference for="Megaorson\ProductBadges\Api\Data\ProductBadgesSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Megaorson\ProductBadges\Model\ResourceModel\ProductBadges\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">megaorson_productbadges_productbadges</argument>
+			<argument name="resourceModel" xsi:type="string">Megaorson\ProductBadges\Model\ResourceModel\ProductBadges\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="megaorson_productbadges_productbadges_listing_data_source" xsi:type="string">Megaorson\ProductBadges\Model\ResourceModel\ProductBadges\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+
+    <type name="Magento\Catalog\Block\Product\View\Gallery">
+        <plugin name="add-image" type="Megaorson\ProductBadges\Block\Product\View\GalleryPlugin"/>
+    </type>
+
+    <type name="Magento\Catalog\Block\Product\Image">
+        <plugin name="add-image" type="Megaorson\ProductBadges\Block\Product\ImagePlugin"/>
+    </type>
+
+</config>
